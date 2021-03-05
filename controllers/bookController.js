@@ -8,7 +8,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.error(err)
-        res.status(422).json(err)
+        res.status(400).json(err)
       });
   },
   findById: function(req, res) {
@@ -17,7 +17,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.error(err)
-        res.status(422).json(err)
+        res.status(400).json(err)
       });
   },
   create: function(req, res) {
@@ -26,7 +26,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.error(err)
-        res.status(422).json(err)
+        res.status(400).json(err)
       });
   },
   update: function(req, res) {
@@ -35,7 +35,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.error(err)
-        res.status(422).json(err)
+        res.status(400).json(err)
       });
   },
   remove: function(req, res) {
@@ -45,7 +45,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => {
         console.error(err)
-        res.status(422).json(err)
+        res.status(400).json(err)
       });
   }
 };
