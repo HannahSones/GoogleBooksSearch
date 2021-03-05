@@ -1,0 +1,22 @@
+.navbar {
+    background-color: #022B3A;
+    color: white;
+    padding: 15px;
+}
+
+a {
+    color: white
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1F7A8C;
+}
+
+.navbar-brand {
+    font-size: 35px;
+}
+
+.nav-item {
+    font-size: 25px;
+}

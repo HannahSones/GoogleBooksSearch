@@ -1,25 +1,23 @@
 const express = require("express");
-const routes = require("./routes");
 const mongoose = require("mongoose");
+const routes = require("./routes");
 
-const app = express();
 const PORT = process.env.PORT || 3001;
-
+const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+  app.use(express.static("client/build"));
 }
 
-// defining API routes
-app.use(routes);
 
-// connect to Mongo database
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googleBooks");
+app.use(routes)
 
 
-app.listen(PORT, function() {
-  console.log(`Server listening on PORT ${PORT}!`);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}!`);
 });

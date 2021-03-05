@@ -1,0 +1,13 @@
+input {
+    width: 50%;
+}
+
+.form-group button {
+    background-color: #E1E5F2;
+    color: #022B3A;
+}
+
+.form-group button:hover {
+    background-color: #022B3A;
+    color: #E1E5F2;
+}

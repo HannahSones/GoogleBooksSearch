@@ -1,19 +1,27 @@
 {
-  "name": "googlebookssearch",
+  "name": "google-books",
   "version": "1.0.0",
-  "description": "A React-based application that allows a user to search and save Google Books.",
-  "main": "index.js",
+  "description": "Google Books",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/HannahSones/GoogleBooksSearch.git"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently -k \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/HannahSones/GoogleBooksSearch/issues"
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
-  "homepage": "https://github.com/HannahSones/GoogleBooksSearch#readme"
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.16.3",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.6.7"
+  }
 }
