@@ -8,6 +8,7 @@ class Results extends Component {
   };
 
   componentDidMount() {
+
     API.savedBooks()
       .then((savedBooks) => this.setState({ savedBooks: savedBooks }))
       .catch((err) => console.error(err));
@@ -37,7 +38,7 @@ class Results extends Component {
 
   render() {
     return (
-      <div>
+      <div data-aos="fade-up" data-aos-duration="2500" data-aos-delay="500">
         {!this.props.books.length ? (
           <h4 className="text-center">No results to display</h4>
         ) : (
