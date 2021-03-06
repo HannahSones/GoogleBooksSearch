@@ -4,7 +4,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function Header() {
-  
   useEffect(() => {
     AOS.init();
     AOS.refresh();
