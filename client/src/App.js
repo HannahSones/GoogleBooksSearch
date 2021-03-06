@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import NavBar from "./components/NavBar/navbar";
+import Navbar from "./components/NavBar/navbar";
 import Header from "./components/Header/header";
 import Wrapper from "./components/Wrapper";
 
@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <NavBar />
+          <Navbar />
           <Header />
           <Wrapper>
             <Route exact path="/" component={Search} />
